@@ -68,7 +68,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
   const [error, setError] = useState<Error | null>(null);
 
   const handleJoin = () => {
-    if (roomName.length > 200) {
+    if (roomName.length > 100) {
       setError(new Error('O código do atendimento é inválido'));
       return;
     }
@@ -78,7 +78,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
       process.env.REACT_APP_DISABLE_TWILIO_CONVERSATIONS !== 'true' && chatConnect(token);
     });
   };
-  farme_907340ab-7e82-4cfa-a7e8-ff799a82605d
+
   if (isFetching || isConnecting) {
     return (
       <Grid container justify="center" alignItems="center" direction="column" style={{ height: '100%' }}>
